@@ -12,7 +12,8 @@ function App() {
 
   useEffect(() => {
     async function fetchTodo() {
-      const url = `${process.env.REACT_APP_TODO_BASE_URL}/${todoId}`;
+      // const url = `${process.env.REACT_APP_TODO_BASE_URL}/${todoId}`;
+      const url = `/.netlify/functions/todo?id=${todoId}`;
       try {
         setLoading(true);
         const todo = await fetch(url).then((res) => res.json());
